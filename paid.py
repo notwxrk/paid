@@ -16,7 +16,7 @@ ADMIN_ID = 7632409181
 import psycopg2
 import psycopg2.extras
 
-DATABASE_URL = "postgresql://dengi_2a9b_user:oYEJabQIJgCWTPWGKI0wqhWSgIkQAnez@dpg-d467jlbuibrs73fjn790-a/dengi_2a9b"
+DATABASE_URL = "postgresql://zakaz_user:TkANjwx3KZfGGCyNpITCpJ3AeEFBMIjW@dpg-d46psv8gjchc73ekrdvg-a/zakaz"
 
 def get_db_connection():
     return psycopg2.connect(DATABASE_URL)
