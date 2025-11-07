@@ -9,7 +9,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, InputFi
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 
 # Bot konfiguratsiyasi
-BOT_TOKEN = "8104389337:AAE0PogY1lLw54ZGLxd0MBBJM4TuaPSo3xs"
+BOT_TOKEN = "8273588414:AAEA-hTsPMtfhOnpITe6A5uFcoDIr0M9WJM"
 ADMIN_ID = 7632409181
 
 # Database setup
