@@ -1,0 +1,11 @@
+Flask
+aiogram
+telebot
+pyTelegramBotAPI
+SQLAlchemy
+psycopg2-binary
+requests
+gunicorn
+python-telegram-bot
+python-dotenv
+pytz
