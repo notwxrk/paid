@@ -1,6 +1,7 @@
 import os
 import logging
 from datetime import datetime
+from flask import Flask
 import sqlite3
 from typing import Dict, List
 
@@ -809,6 +810,19 @@ def main():
     application.add_handler(CallbackQueryHandler(handle_callback))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     application.add_handler(MessageHandler(filters.PHOTO, handle_photo))
+    
+# ========== Flask web server for uptime ping ==========
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "✅ Бот работает", 200
+
+# Run Flask server in a separate thread
+threading.Thread(
+    target=lambda: app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000))),
+    daemon=True
+).start()
     
     # Start bot
     application.run_polling()
