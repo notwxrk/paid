@@ -22,7 +22,7 @@ import psycopg2
 import psycopg2.extras
 
 # PostgreSQL URL
-POSTGRES_URL = "postgresql://gaming_wy9h_user:wzTJ9WUzd8UK2HvzvnwLdeti0y6J39u8@dpg-d47lujjipnbc73cvte60-a/gaming_wy9h"
+POSTGRES_URL = "postgresql://paqi_user:bfx6xbWse6YIGvEoBOvF10b5hSyy31OU@dpg-d47o2iqdbo4c73fb9aog-a/paqi"
 
 # SQLite backup
 SQLITE_DB = "backup.db"
