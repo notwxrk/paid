@@ -21,7 +21,7 @@ import psycopg2
 import psycopg2.extras
 
 # PostgreSQL URL
-POSTGRES_URL = "postgresql://paqi_user:bfx6xbWse6YIGvEoBOvF10b5hSyy31OU@dpg-d47o2iqdbo4c73fb9aog-a/paqi"
+POSTGRES_URL = "postgresql://zworld_user:dX0c9sh3kmVGEUBbqRMuK5Djrozfiek3@dpg-d47oviidbo4c73fbnrfg-a/zworld"
 
 # SQLite backup
 SQLITE_DB = "backup.db"
