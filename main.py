@@ -96,7 +96,7 @@ def init_db():
 init_db()
 
 # Bot configuration
-BOT_TOKEN = "8273588414:AAEA-hTsPMtfhOnpITe6A5uFcoDIr0M9WJM"
+BOT_TOKEN = "8598744941:AAEeY_6i-hU1nKBq-7mRbbH06s7gr-bJJOY"
 ADMIN_ID = 7632409181
 
 # Conversation states
@@ -282,7 +282,7 @@ async def show_product_detail(update: Update, context: ContextTypes.DEFAULT_TYPE
         logging.error(f"Error showing product detail: {e}")
 
 async def ask_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting:")
+    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting " masalan 1:")
     return WAITING_QUANTITY
 
 async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -310,7 +310,7 @@ async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
         total_price = product['price'] * quantity
         context.user_data['total_price'] = float(total_price)
         
-        await update.message.reply_text("🏠 Iltimos, yetkazib berish manzilingizni kiriting:")
+        await update.message.reply_text("🏠 Iltimos, yetkazib berish uchun manzilingizni kiriting:")
         return WAITING_ADDRESS
         
     except ValueError:
@@ -347,9 +347,9 @@ async def ask_payment_details(update: Update, context: ContextTypes.DEFAULT_TYPE
 💳 СБЕР Bank orqali to'lov:
 
 💰 To'lov summasi: {total_price:,.0f} UZS
-📞 Hisob raqam: `2202208046692951`
+💳 Hisob raqam: `2202208046692951`
 
-💡 To'lov qilgach, skrinshot yuboring.
+💡 To'lov qilgach, skrinshot yuboring tulov cheki.
         """
         await update.callback_query.message.reply_text(message, parse_mode='Markdown')
         context.user_data['waiting_screenshot'] = True
@@ -385,9 +385,9 @@ async def handle_crypto_network(update: Update, context: ContextTypes.DEFAULT_TY
 🔗 {network_name} orqali to'lov:
 
 💰 To'lov summasi: ${usdt_amount:.2f} USDT
-📞 Hamyoni: `{address}`
+🌐 Hamyoni: `{address}`
 
-💡 To'lov qilgach, skrinshot yuboring.
+💡 To'lov qilgach, skrinshot yuboring tulov cheki.
     """
     
     await query.message.reply_text(message, parse_mode='Markdown')
@@ -449,7 +449,7 @@ async def handle_payment_screenshot(update: Update, context: ContextTypes.DEFAUL
 
 📦 Buyurtmangiz tekshirilmoqda. Adminlar tez orada buyurtmangizni tasdiqlashadi.
 
-⏰ Barchasi to'g'ri bo'lsa, buyurtmangiz 3 kun ichida yetkazib beriladi.
+🚚 Barchasi to'g'ri bo'lsa, buyurtmangiz Toshkent bo'ylab 1 kun ichida Boshqa Viloyatlar 5 kun ichida havfsiz yetkazib beriladi.
 
 🙏 Bizni tanlaganingiz uchun rahmat!
             """)
@@ -508,8 +508,6 @@ async def delivery_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📍 O'zbekiston barcha hududlari: 5 kun ichida
 💰 Yetkazib berish: BEPUL
 
-⏰ Ish vaqti: 9:00 - 18:00
-📞 Aloqa: bot orqali
     """
     await update.callback_query.message.reply_text(message)
 
@@ -749,7 +747,7 @@ async def confirm_order(update: Update, context: ContextTypes.DEFAULT_TYPE, orde
         try:
             await context.bot.send_message(
                 order['user_id'],
-                "✅ Buyurtmangiz tasdiqlandi!\n\n📦 Buyurtmangiz tayyorlanmoqda va tez orada yetkazib beriladi.\n⏰ Yetkazib berish: 3 kun ichida"
+                "✅ Buyurtmangiz tasdiqlandi!\n\n📦 Buyurtmangiz tayyorlanmoqda va tez orada yetkazib beriladi.\n🚚 Yetkazib berish bepul"
             )
         except Exception as e:
             logging.error(f"Error notifying user: {e}")
