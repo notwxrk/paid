@@ -282,7 +282,7 @@ async def show_product_detail(update: Update, context: ContextTypes.DEFAULT_TYPE
         logging.error(f"Error showing product detail: {e}")
 
 async def ask_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting " masalan 1:")
+    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting , masalan 1:")
     return WAITING_QUANTITY
 
 async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
