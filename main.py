@@ -578,7 +578,7 @@ async def admin_list_orders(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text = (
                 f"ID: {o.order_uid}\nUser: {o.user_name} ({o.user_id})\nMahsulot: {prod.title if prod else ''}\nMiqdor: {o.quantity}\nJami: {int(o.total_uzs):,} UZS\nStatus: {o.status}"
             )
-            kb = InlineKeyboardMarkup([[InlineKeyboardButton('Tasdiqlash', callback_data=f'admin_approve_{o.id}'), InlineKeyboardButton('Rad etish', callback_data=f'admin_reject_{o.id}')],[InlineKeyboardButton('O\\'chirish', callback_data=f'admin_delete_{o.id}')]])
+            kb = InlineKeyboardMarkup([[InlineKeyboardButton('Tasdiqlash', callback_data=f'admin_approve_{o.id}'), InlineKeyboardButton('Rad etish', callback_data=f'admin_reject_{o.id}')],[InlineKeyboardButtprodu chirish', callback_data=f'admin_delete_{o.id}')]])
             if o.screenshot_file_id:
                 try:
                     await update.message.reply_photo(photo=o.screenshot_file_id, caption=text, reply_markup=kb)
@@ -603,7 +603,7 @@ async def admin_set_rate_finish(update: Update, context: ContextTypes.DEFAULT_TY
     try:
         rate = Decimal(text)
     except Exception:
-        await update.message.reply_text('Iltimos to\\'g\\'ri son kiriting.')
+        await update.message.reply_text('Iltimos tugri son kiriting.')
         return
     session = SessionLocal()
     try:
