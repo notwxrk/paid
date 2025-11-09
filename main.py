@@ -357,7 +357,7 @@ async def receive_screenshot(update: Update, context: ContextTypes.DEFAULT_TYPE)
         elif update.message.document:
             file_id = update.message.document.file_id
         else:
-            await update.message.reply_text('Iltimos to\\'lov skrinshotini yuboring (rasm yoki fayl).')
+            await update.message.reply_text('Iltimos tolov skrinshotini yuboring (rasm yoki fayl).')
             return
 
         # create order
@@ -395,7 +395,7 @@ async def receive_screenshot(update: Update, context: ContextTypes.DEFAULT_TYPE)
         prod = order.product
         admin_text = (
             f"Yangi buyurtma!\nID: {order.order_uid}\nUser: {order.user_name} ({order.user_id})\n"
-            f"Mahsulot: {prod.title if prod else 'Noma'lumot'}\nMiqdor: {order.quantity}\nJami: {int(order.total_uzs):,} UZS\n"
+            f"Mahsulot: {prod.title if prod else 'malumot'}\nMiqdor: {order.quantity}\nJami: {int(order.total_uzs):,} UZS\n"
             f"To'lov: {order.payment_method} {('('+order.crypto_network+')' if order.crypto_network else '')}\n"
             f"Telefon: {order.phone}\nManzil: {order.address}\nVaqt: {order.created_at.strftime('%Y-%m-%d %H:%M')}"
         )
