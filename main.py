@@ -423,7 +423,7 @@ async def admin_action_cb(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         order = session.query(Order).get(order_id)
         if not order:
-            await query.message.reply_text('Buyurtma topilmadi yoki oldin o\\'chirildi.')
+            await query.message.reply_text('Buyurtma topilmadi yoki oldin uchirildi.')
             return
         if action == 'approve':
             order.status = 'approved'
