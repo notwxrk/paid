@@ -449,7 +449,7 @@ async def admin_action_cb(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 prod.quantity = prod.quantity + order.quantity
             session.delete(order)
             session.commit()
-            await query.message.reply_text('Buyurtma o\\'chirildi va zaxira tiklandi.')
+            await query.message.reply_text('Buyurtma uchirildi va zaxira tiklandi.')
     finally:
         session.close()
 
@@ -472,7 +472,7 @@ async def admin_add_price(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         price = Decimal(text)
     except Exception:
-        await update.message.reply_text('Iltimos to\\'g\\'ri narx yozing (faqat son).')
+        await update.message.reply_text('Iltimos  narx yozing (faqat son).')
         return
     context.user_data['new_price'] = price
     await update.message.reply_text('Miqdorini kiriting (son):')
@@ -484,7 +484,7 @@ async def admin_add_qty(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text('Iltimos son kiriting.')
         return
     context.user_data['new_qty'] = int(text)
-    await update.message.reply_text('Mahsulot haqida qisqacha ta\\'rif kiriting:')
+    await update.message.reply_text('Mahsulot haqida qisqacha tarif kiriting:')
     return ADD_DESC
 
 async def admin_add_desc(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -529,11 +529,11 @@ async def admin_list_products(update: Update, context: ContextTypes.DEFAULT_TYPE
     try:
         prods = session.query(Product).order_by(Product.created_at.desc()).all()
         if not prods:
-            await update.message.reply_text('Hozircha mahsulot yo\\'q.')
+            await update.message.reply_text('Hozircha mahsulot yuq.')
             return
         for p in prods:
             text = f"{p.title}\nNarx: {int(p.price_uzs):,} UZS\nMiqdor: {p.quantity}\nID: {p.id}"
-            kb = InlineKeyboardMarkup([[InlineKeyboardButton('O\\'chirish', callback_data=f'prod_delete_{p.id}')]])
+            kb = InlineKeyboardMarkup([[InlineKeyboardButton('uchirish', callback_data=f'prod_delete_{p.id}')]])
             if p.photo_file_id:
                 await update.message.reply_photo(photo=p.photo_file_id, caption=text, reply_markup=kb)
             else:
@@ -557,7 +557,7 @@ async def admin_prod_delete_cb(update: Update, context: ContextTypes.DEFAULT_TYP
             return
         session.delete(p)
         session.commit()
-        await query.message.reply_text('Mahsulot o\\'chirildi.')
+        await query.message.reply_text('Mahsulot uchirildi.')
     finally:
         session.close()
 
@@ -608,7 +608,7 @@ async def admin_set_rate_finish(update: Update, context: ContextTypes.DEFAULT_TY
     session = SessionLocal()
     try:
         set_setting(session, 'uzs_per_usdt', str(rate))
-        await update.message.reply_text(f'Kurs o\\'rnatildi: 1 USDT = {int(rate):,} UZS')
+        await update.message.reply_text(f'Kurs urnatildi: 1 USDT = {int(rate):,} UZS')
     finally:
         session.close()
     return ConversationHandler.END
