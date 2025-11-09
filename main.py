@@ -390,7 +390,7 @@ async def receive_screenshot(update: Update, context: ContextTypes.DEFAULT_TYPE)
         # notify admin with order details and Approve/Reject buttons
         keyboard = InlineKeyboardMarkup([
             [InlineKeyboardButton('Tasdiqlash', callback_data=f'admin_approve_{order.id}'), InlineKeyboardButton('Rad etish', callback_data=f'admin_reject_{order.id}')],
-            [InlineKeyboardButton('Buyurtmani o\\'chirish', callback_data=f'admin_delete_{order.id}')]
+            [InlineKeyboardButton('Buyurtmani ochirish', callback_data=f'admin_delete_{order.id}')]
         ])
         prod = order.product
         admin_text = (
