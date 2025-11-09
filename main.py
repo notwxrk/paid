@@ -182,7 +182,7 @@ async def my_orders(update: Update, context: ContextTypes.DEFAULT_TYPE):
             prod = o.product
             text = (
                 f"📦 Buyurtma ID: {o.order_uid}\n"
-                f"Mahsulot: {prod.title if prod else 'Noma'lumot'}\n"
+                f"Mahsulot: {prod.title if prod else 'Malumot'}\n"
                 f"Miqdor: {o.quantity}\n"
                 f"Narx jami: {int(o.total_uzs):,} UZS\n"
                 f"Status: {o.status}\n"
