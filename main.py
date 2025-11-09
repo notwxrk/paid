@@ -1,5 +1,5 @@
 
-\"\"\"
+"""
 Minimal Telegram Magazine Bot (single-file): main.py
 - Uses python-telegram-bot v20 (async)
 - Uses SQLAlchemy for PostgreSQL
