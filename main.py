@@ -28,7 +28,7 @@ python main.py
 
 Deploy on Render/GitHub: push this file to repo, create a Render web service (or worker) that runs `python main.py` and set environment variables for BOT_TOKEN and DATABASE_URL.
 
-\"\"\"
+"""
 
 import os
 import logging
