@@ -326,7 +326,7 @@ async def handle_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['phone'] = update.message.text
     
     keyboard = [
-        [InlineKeyboardButton("UZS", callback_data="sber")],
+        [InlineKeyboardButton("KARTA", callback_data="sber")],
         [InlineKeyboardButton("CRYPTO", callback_data="crypto")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -347,9 +347,10 @@ async def ask_payment_details(update: Update, context: ContextTypes.DEFAULT_TYPE
 💳 Bank orqali to'lov:
 
 💰 To'lov summasi: {total_price:,.0f} UZS
-💳 Hisob raqam: `9860080314781347`
+💳 Hisob raqam: `2202208046692951`
 
-💡 To'lov qilgach, skrinshot yuboring tulov cheki.
+💡 To'lov qilgach, skrinshot yuboring tulov cheki 
+ℹ️ Misol, OctoBank RF Kartalariga pul utkazma orqali yuborish mumkun .
         """
         await update.callback_query.message.reply_text(message, parse_mode='Markdown')
         context.user_data['waiting_screenshot'] = True
