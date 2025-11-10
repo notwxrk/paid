@@ -326,7 +326,7 @@ async def handle_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['phone'] = update.message.text
     
     keyboard = [
-        [InlineKeyboardButton("СБЕР", callback_data="sber")],
+        [InlineKeyboardButton("UZS", callback_data="sber")],
         [InlineKeyboardButton("CRYPTO", callback_data="crypto")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -344,10 +344,10 @@ async def ask_payment_details(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     if payment_method == "sber":
         message = f"""
-💳 СБЕР Bank orqali to'lov:
+💳 Bank orqali to'lov:
 
 💰 To'lov summasi: {total_price:,.0f} UZS
-💳 Hisob raqam: `2202208046692951`
+💳 Hisob raqam: `9860080314781347`
 
 💡 To'lov qilgach, skrinshot yuboring tulov cheki.
         """
