@@ -128,7 +128,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # User menu
         keyboard = [
             [InlineKeyboardButton("🧨 Tovarlar", callback_data="view_products")],
-            [InlineKeyboardButton("✨️ Mening Buyurtmalarim", callback_data="my_orders")],
+            [InlineKeyboardButton("✨️ Buyurtmalarim", callback_data="my_orders")],
             [InlineKeyboardButton("🚖 Yetkazib Berish", callback_data="delivery_info")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -282,7 +282,7 @@ async def show_product_detail(update: Update, context: ContextTypes.DEFAULT_TYPE
         logging.error(f"Error showing product detail: {e}")
 
 async def ask_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting , masalan 1 : bot keyingi bosqichga utmasa haridingizni qayta boshlang!")
+    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting , masalan 1 : Bot javob qaytarmasa 🛒Buyurtma Berish bosing ! ")
     return WAITING_QUANTITY
 
 async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -347,7 +347,7 @@ async def ask_payment_details(update: Update, context: ContextTypes.DEFAULT_TYPE
 💳 Bank orqali to'lov:
 
 💰 To'lov summasi: {total_price:,.0f} UZS
-💳 Hisob raqam: `2202208046692951`
+💳 Karta raqami: `2202208046692951`
 
 💡 To'lov qilgach, skrinshot yuboring tulov cheki 
 ℹ️ Misol, UzumBank Xalqaro pul utkazma orqali yuborish mumkun .
@@ -363,7 +363,7 @@ async def ask_payment_details(update: Update, context: ContextTypes.DEFAULT_TYPE
         reply_markup = InlineKeyboardMarkup(keyboard)
         
         await update.callback_query.message.reply_text(
-            f"🔗 To'lov tarmog'ini tanlang:\n💰 Jami summa: ${total_price/12500:.2f} USDT (taxminan)",
+            f"🔗 To'lov tarmog'ini tanlang:\n💰 Jami summa: ${total_price/12500:.2f} USDT ",
             reply_markup=reply_markup
         )
 
