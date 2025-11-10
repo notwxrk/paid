@@ -282,7 +282,7 @@ async def show_product_detail(update: Update, context: ContextTypes.DEFAULT_TYPE
         logging.error(f"Error showing product detail: {e}")
 
 async def ask_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting , masalan 1:")
+    await update.callback_query.message.reply_text("📝 Iltimos, kerakli miqdorni kiriting , masalan 1 : bot keyingi bosqichga utmasa haridingizni qayta boshlang!")
     return WAITING_QUANTITY
 
 async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -310,7 +310,7 @@ async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
         total_price = product['price'] * quantity
         context.user_data['total_price'] = float(total_price)
         
-        await update.message.reply_text("🏠 Iltimos, yetkazib berish uchun manzilingizni kiriting Batafsil Viloyat,Shaxar,tuman,mahalla,kocha:")
+        await update.message.reply_text("🏠 Iltimos, yetkazib berish uchun manzilingizni kiriting:")
         return WAITING_ADDRESS
         
     except ValueError:
@@ -319,7 +319,7 @@ async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_address(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['address'] = update.message.text
-    await update.message.reply_text("📞 Iltimos, telefon raqamingizni kiriting yetkazib beruvchi manzilga kelganida qung'iroq qiladi 2ta raqam qoldirish mumkun:")
+    await update.message.reply_text("📞 Iltimos, telefon raqamingizni kiriting:")
     return WAITING_PHONE
 
 async def handle_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -350,7 +350,7 @@ async def ask_payment_details(update: Update, context: ContextTypes.DEFAULT_TYPE
 💳 Hisob raqam: `2202208046692951`
 
 💡 To'lov qilgach, skrinshot yuboring tulov cheki 
-ℹ️ Misol, OctoBank RF Kartalariga pul utkazma orqali yuborish mumkun .
+ℹ️ Misol, UzumBank Xalqaro pul utkazma orqali yuborish mumkun .
         """
         await update.callback_query.message.reply_text(message, parse_mode='Markdown')
         context.user_data['waiting_screenshot'] = True
