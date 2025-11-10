@@ -310,7 +310,7 @@ async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
         total_price = product['price'] * quantity
         context.user_data['total_price'] = float(total_price)
         
-        await update.message.reply_text("🏠 Iltimos, yetkazib berish uchun manzilingizni kiriting:")
+        await update.message.reply_text("🏠 Iltimos, yetkazib berish uchun manzilingizni kiriting Batafsil Viloyat,Shaxar,tuman,mahalla,kocha:")
         return WAITING_ADDRESS
         
     except ValueError:
@@ -319,7 +319,7 @@ async def handle_quantity(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_address(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['address'] = update.message.text
-    await update.message.reply_text("📞 Iltimos, telefon raqamingizni kiriting:")
+    await update.message.reply_text("📞 Iltimos, telefon raqamingizni kiriting yetkazib beruvchi manzilga kelganida qung'iroq qiladi 2ta raqam qoldirish mumkun:")
     return WAITING_PHONE
 
 async def handle_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -449,7 +449,7 @@ async def handle_payment_screenshot(update: Update, context: ContextTypes.DEFAUL
 
 📦 Buyurtmangiz tekshirilmoqda. Adminlar tez orada buyurtmangizni tasdiqlashadi.
 
-🚚 Barchasi to'g'ri bo'lsa, buyurtmangiz Toshkent bo'ylab 1 kun ichida Boshqa Viloyatlar 5 kun ichida havfsiz yetkazib beriladi.
+🚚 Barchasi to'g'ri bo'lsa, buyurtmangiz Toshkent bo'ylab 1 kun ichida Boshqa Viloyatlar 1 - 3 kun ichida havfsiz yetkazib beriladi.
 
 🙏 Bizni tanlaganingiz uchun rahmat!
             """)
@@ -504,9 +504,8 @@ async def delivery_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message = """
 🚖 Yetkazib berish:
 
-📍 Toshkent bo'ylab: 1 kun ichida
-📍 O'zbekiston barcha hududlari: 5 kun ichida
-💰 Yetkazib berish: BEPUL
+📍 Toshkent bo'ylab: 1 kun ichida va bepul
+📍 Boshqa hududlar: 1 - 3 kun ichida 25,000 sum
 
     """
     await update.callback_query.message.reply_text(message)
