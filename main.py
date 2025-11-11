@@ -780,7 +780,7 @@ async def withdraw_money(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"💰 Mavjud balans: {user['balance']:,.0f} so'm\n"
         f"💸 Minimal yechish: 25,000 so'm\n"
         f"📉 Komissiya: 15%\n\n"
-        f"Yechish uchun miqdorni kiriting (so'mda):"
+        f"Yechish uchun miqdorni kiriting  masalan 25000:"
     )
     
     await query.message.reply_text(text)
@@ -998,8 +998,8 @@ async def fill_balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
         "📥 Hisobni to'ldirish\n\n"
         "Hisobingizni to'ldirish uchun admin bilan bog'laning:\n"
-        f"👤 Admin: @admin\n\n"
-        "To'lov qilgach, admin bilan bog'lanib, to'lov chekini yuboring."
+        f"👤 Admin: @GooTaksi_Admin\n\n"
+        "Admin Ish vaqti 6:00 - 21:00."
     )
     
     await update.message.reply_text(text)
@@ -1051,7 +1051,7 @@ async def show_referral(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"🔗 Sizning referal havolangiz:\n`{referral_link}`\n\n"
         f"🎯 Taklif qilish shartlari:\n"
         f"• Do'stingiz mashina sotib olganda: 5% bonus\n"
-        f"• 10 ta do'st taklif qilsangiz: Tico mashinasi + 5000 so'm\n"
+        f"• 10 ta do'st taklif qilsangiz: Tico mashinasi Bonus\n"
     )
     
     if referrals_count >= 10 and not has_tico_bonus:
@@ -1105,9 +1105,9 @@ async def daily_bonus(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def support(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
         "💬 Qo'llab Quvvatlash\n\n"
-        "Savol yoki takliflaringiz bo'lsa, admin bilan bog'laning:\n"
-        f"👤 Admin: @admin\n\n"
-        "Yordam kerak bo'lsa, murojaat qiling!"
+        "Savol bo'lsa, admin bilan bog'laning:\n"
+        f"👤 Admin: @GooTaksi_Admin\n\n"
+        "Admin Ish vaqti 6:00 - 21:00"
     )
     
     await update.message.reply_text(text)
