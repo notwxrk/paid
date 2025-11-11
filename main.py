@@ -477,7 +477,7 @@ async def ask_for_subscription(update: Update, context: ContextTypes.DEFAULT_TYP
     
     if update.message:
         await update.message.reply_text(
-            f"❌ Kechirasiz, botimizdan foydalanish uchun ushbu kanallarga obuna bo'lishingiz kerak:\n\n"
+            f"🚨 Kechirasiz, botimizdan foydalanish uchun ushbu kanallarga obuna bo'lishingiz kerak:\n\n"
             f"📢 Kanal: {CHANNEL_USERNAME}\n"
             f"💬 Guruh: {GROUP_USERNAME}\n\n"
             f"Iltimos, kanallarga a'zo bo'ling va 'Tekshirish' tugmasini bosing.",
@@ -485,7 +485,7 @@ async def ask_for_subscription(update: Update, context: ContextTypes.DEFAULT_TYP
         )
     else:
         await update.callback_query.edit_message_text(
-            f"❌ Kechirasiz, botimizdan foydalanish uchun ushbu kanallarga obuna bo'lishingiz kerak:\n\n"
+            f"🚨 Kechirasiz, botimizdan foydalanish uchun ushbu kanallarga obuna bo'lishingiz kerak:\n\n"
             f"📢 Kanal: {CHANNEL_USERNAME}\n"
             f"💬 Guruh: {GROUP_USERNAME}\n\n"
             f"Iltimos, kanallarga a'zo bo'ling va 'Tekshirish' tugmasini bosing.",
@@ -498,7 +498,7 @@ async def check_membership_callback(update: Update, context: ContextTypes.DEFAUL
     logger.info(f"Membership check callback from user {user_id}")
     
     if await check_channel_and_group_membership(user_id, context):
-        await query.edit_message_text("✅ Siz kanal va guruhga a'zo bo'lgansiz! Endi botdan to'liq foydalanishingiz mumkin.")
+        await query.edit_message_text("✅ Siz kanal va guruhga a'zo bo'lgansiz! Endi botdan to'liq foydalanishingiz mumkin /start bosing.")
         await show_main_menu(update, context)
         return MENU
     else:
