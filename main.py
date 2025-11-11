@@ -47,7 +47,7 @@ def run_flask():
     app.run(host='0.0.0.0', port=8080)
 
 # Database configuration
-DATABASE_URL = "postgresql://taksigo_user:t8vPyH7ZECp2wM8BNfg1wFrDDoz0DVIM@dpg-d49golemcj7s73efusj0-a/taksigo"
+DATABASE_URL = "postgresql://gootaksi_user:A7MfEOWMvCQQzxgjRSqb7tNcek2rvCm2@dpg-d49kcoje5dus73cpkal0-a/gootaksi"
 
 # Bot configuration
 BOT_TOKEN = "8526778595:AAGP5ZINtNu6M2vYiZt2onz6bFRostthM8k"
