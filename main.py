@@ -52,8 +52,8 @@ DATABASE_URL = "postgresql://gootaksi_user:A7MfEOWMvCQQzxgjRSqb7tNcek2rvCm2@dpg-
 # Bot configuration
 BOT_TOKEN = "8526778595:AAGP5ZINtNu6M2vYiZt2onz6bFRostthM8k"
 ADMIN_ID = 7431672482
-CHANNEL_USERNAME = "@goo_taksi"
-GROUP_USERNAME = "@goo_taksi_chat"
+CHANNEL_USERNAME = "@gootaksi"
+GROUP_USERNAME = "@gootaksi_chat"
 
 # Conversation states
 PHONE, MENU, BUY_CAR, FILL_BALANCE, WITHDRAW_AMOUNT, WITHDRAW_CARD, SUPPORT = range(7)
@@ -999,7 +999,7 @@ async def fill_balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "📥 Hisobni to'ldirish\n\n"
         "Hisobingizni to'ldirish uchun admin bilan bog'laning:\n"
         f"👤 Admin: @GooTaksi_Admin\n\n"
-        "Admin Ish vaqti 6:00 - 21:00."
+        "Admin Ish vaqti 6:00 - 23:00."
     )
     
     await update.message.reply_text(text)
@@ -1107,7 +1107,7 @@ async def support(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "💬 Qo'llab Quvvatlash\n\n"
         "Savol bo'lsa, admin bilan bog'laning:\n"
         f"👤 Admin: @GooTaksi_Admin\n\n"
-        "Admin Ish vaqti 6:00 - 21:00"
+        "Admin Ish vaqti 6:00 - 23:00"
     )
     
     await update.message.reply_text(text)
