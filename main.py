@@ -47,7 +47,7 @@ def run_flask():
     app.run(host='0.0.0.0', port=8080)
 
 # Database configuration
-DATABASE_URL = "postgresql://gotaxi_user:UPS9rWxHgjLurk3mPbCDekp1pztlDUYB@dpg-d49mmumuk2gs739dh7dg-a/gotaxi"
+DATABASE_URL = "postgresql://taxigoo_user:BQ6XUA3PtOSW5VTRaTQxOJPrIWlt7uD5@dpg-d49nm4euk2gs739e99d0-a/taxigoo"
 
 # Bot configuration
 BOT_TOKEN = "8526778595:AAGP5ZINtNu6M2vYiZt2onz6bFRostthM8k"
@@ -520,7 +520,7 @@ async def handle_phone(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not phone_number.startswith('+998') and not phone_number.startswith('998'):
         await update.message.reply_text(
             "❌ Faqat O'zbekiston telefon raqamlari qabul qilinadi!\n"
-            "Iltimos, +998 kodli raqamingizni yuboring.",
+            "Iltimos +998 foydalaning.",
             reply_markup=ReplyKeyboardRemove()
         )
         logger.warning(f"Non-Uzbekistan phone number rejected: {phone_number}")
