@@ -47,7 +47,7 @@ def run_flask():
     app.run(host='0.0.0.0', port=8080)
 
 # Database configuration
-DATABASE_URL = "postgresql://taxigoo_user:BQ6XUA3PtOSW5VTRaTQxOJPrIWlt7uD5@dpg-d49nm4euk2gs739e99d0-a/taxigoo"
+DATABASE_URL = "postgresql://mytaxi_user:oq0x7wzTfgKRRmc9k1PAkF1KxrNqxSNC@dpg-d49un63ipnbc739a95b0-a/mytaxi"
 
 # Bot configuration
 BOT_TOKEN = "8526778595:AAGP5ZINtNu6M2vYiZt2onz6bFRostthM8k"
@@ -676,7 +676,7 @@ async def show_cars(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     text = (
         "🚖 Mashinalar bo'limiga xush kelibsiz!\n\n"
-        "Har bir tanlagan mashinangiz sizga kunlik foyda olib keladi.\n"
+        "Har bir tanlagan mashinangiz sizga kunlik foyda olib keladi. Bu qanday ishlaydi ? siz mashina harid qilganingizda mashina darhol ish boshlaydi va sizga kunlik foyda olib keladi.\n"
         "Quyidagi mashinalardan birini tanlang:"
     )
     
