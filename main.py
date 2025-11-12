@@ -1056,10 +1056,10 @@ async def show_referral(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"👥 Referal tizimi\n\n"
         f"📊 Jami takliflar: {referrals_count} ta\n"
         f"💰 Referal bonus: {referral_bonus:,.0f} so'm\n\n"
-        f"🔗 Sizning referal havolangiz:\n`{referral_link}`\n\n"
+        f"🔗 Sizning referal havolangiz:\n{referral_link}\n\n"
         f"🎯 Taklif qilish shartlari:\n"
-        f"• Har bir taklif uchun: 500 so'm bonus\n"
-        f"• 12 ta do'st taklif qilsangiz: BEPUL Tico mashinasi 🚗\n"
+        f"• Har bir taklif uchun: 500 so'm\n"
+        f"• 12 kishi taklif qilsangiz: BEPUL Tico mashinasi 🚗\n"
     )
     
     if referrals_count >= 12 and not has_tico_bonus:
